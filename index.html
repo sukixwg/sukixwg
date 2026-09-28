@@ -447,28 +447,6 @@
         .btn-apk-store:active {
             transform: scale(0.95);
         }
-        
-        .btn-share-app {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #F3F3F3;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 12px;
-            gap: 8px;
-        }
-        .btn-share-app:active {
-            transform: scale(0.95);
-        }
 
         .cart-list {
             display: flex;
@@ -1049,7 +1027,6 @@
         
         <div id="profilePage" class="page-content glass-panel" style="margin: 16px; border-radius: 16px;">
             <a href="https://wa.me/6281930244528" target="_blank" class="btn-apk-store">Jasa buat apk store gratis</a>
-            <button onclick="shareApp()" class="btn-share-app"><i class="fa-solid fa-share-nodes"></i> Share Aplikasi Ini</button>
         </div>
     </div>
 
@@ -1255,18 +1232,6 @@
                 overlay.style.display = 'none';
                 localStorage.setItem('dialogPassed', 'true');
             }, 4000);
-        }
-
-        function shareApp() {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    text: 'Kunjungi Suki Store sekarang!',
-                    url: window.location.href
-                }).catch(err => console.log(err));
-            } else {
-                alert('Browser Anda tidak mendukung fitur share ini.');
-            }
         }
     </script>
 </body>
