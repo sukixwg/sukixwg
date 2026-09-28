@@ -2,19 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Suki Store</title>
-    
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#050505">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="192x192.png">
-
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
             --bg-base: #050505;
@@ -120,7 +113,7 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            aspect-ratio: 1080 / 400;
+            aspect-ratio: 1080 / 350;
         }
         .carousel-track {
             display: flex;
@@ -665,13 +658,13 @@
                 <div class="carousel-wrapper glass-panel">
                     <div class="carousel-track" id="carouselTrack">
                         <div class="carousel-slide">
-                            <img src="https://i.ibb.co.com/YB968b14/20260928-153119.jpg" alt="Promo 1">
+                            <img src="https://i.ibb.co.com/sJ3nGj4q/20260928-223426.png" alt="Promo 1">
                         </div>
                         <div class="carousel-slide">
-                            <img src="https://i.ibb.co.com/3Y5VFDdf/20260928-153108.jpg" alt="Promo 2">
+                            <img src="https://i.ibb.co.com/TBQdxfRk/20260928-223736.png" alt="Promo 2">
                         </div>
                         <div class="carousel-slide">
-                            <img src="https://i.ibb.co.com/Zp2cCxkB/20260928-153129.jpg" alt="Promo 3">
+                            <img src="https://i.ibb.co.com/WLnbpp1/20260928-223344.png" alt="Promo 3">
                         </div>
                     </div>
                 </div>
@@ -1040,7 +1033,7 @@
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js');
+                navigator.serviceWorker.register('sw.js');
             });
         }
     </script>
