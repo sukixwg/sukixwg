@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Suki Store</title>
     <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Teko:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -33,6 +35,138 @@
             display: flex;
             justify-content: center;
             min-height: 100vh;
+        }
+
+        @font-face {
+            font-family: 'Termit';
+            src: local('Termit'), local('Teko-Bold'), url('https://fonts.gstatic.com/s/teko/v21/LYjd3_4AnmsP3p9_A8k.woff2') format('woff2');
+        }
+
+        .startup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #06080d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 9999;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .dialog-overlay {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .dialog-box {
+            background: #0d111a;
+            border-radius: 24px;
+            padding: 22px;
+            border: 1px solid #1c2433;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .dialog-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            gap: 10px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .brand-title {
+            font-family: 'Termit', 'Teko', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .badge-more {
+            background: #161c28;
+            border: 1px solid #263145;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .content-list {
+            list-style: none;
+            color: #d1d5db;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            padding-left: 4px;
+        }
+
+        .content-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .content-list li::before {
+            content: '•';
+            color: #9ca3af;
+            font-size: 16px;
+        }
+
+        .dialog-footer {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 18px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-close {
+            background: #232a3b;
+            color: #ffffff;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .btn-join {
+            background: linear-gradient(135deg, #5b50f6 0%, #2b6bf3 100%);
+            color: #ffffff;
+            cursor: pointer;
         }
 
         .bg-orb-1, .bg-orb-2 {
@@ -288,6 +422,52 @@
         }
         .btn-action-buy:active {
             transform: scale(0.92);
+        }
+
+        .btn-apk-store {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #050505;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.2px;
+        }
+        .btn-apk-store:hover {
+            filter: brightness(1.1);
+        }
+        .btn-apk-store:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-share-app {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #F3F3F3;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 12px;
+            gap: 8px;
+        }
+        .btn-share-app:active {
+            transform: scale(0.95);
         }
 
         .cart-list {
@@ -649,6 +829,31 @@
 </head>
 <body>
 
+    <div id="startupDialogOverlay" class="startup-overlay">
+        <div class="dialog-overlay">
+            <div class="dialog-box">
+                <div class="dialog-header">
+                    <div class="profile-section">
+                        <img src="https://i.ibb.co.com/wFKrf0dG/20260929-000923.png" alt="Profile" class="profile-img">
+                        <span class="brand-title">Wg Mods</span>
+                    </div>
+                    <a href="#" class="badge-more">More Apps</a>
+                </div>
+                
+                <ul class="content-list">
+                    <li>follow atau dihitamkan</li>
+                    <li>wangsaf gaming yt</li>
+                    <li>tiktok @cwuhuy</li>
+                </ul>
+                
+                <div class="dialog-footer">
+                    <button class="btn btn-close" disabled onclick="return false;">Close</button>
+                    <a href="https://whatsapp.com/channel/0029Vb6t3YqIXnluSByJvh1g" target="_blank" class="btn btn-join" onclick="handleJoin()">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="bg-orb-1"></div>
     <div class="bg-orb-2"></div>
 
@@ -843,8 +1048,8 @@
         </div>
         
         <div id="profilePage" class="page-content glass-panel" style="margin: 16px; border-radius: 16px;">
-            <h2>Profile</h2>
-            <p style="font-size: 0.85rem; color: #ccc;">Silakan login untuk melihat detail profil Anda.</p>
+            <a href="https://wa.me/6281930244528" target="_blank" class="btn-apk-store">Jasa buat apk store gratis</a>
+            <button onclick="shareApp()" class="btn-share-app"><i class="fa-solid fa-share-nodes"></i> Share Aplikasi Ini</button>
         </div>
     </div>
 
@@ -1035,6 +1240,33 @@
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js');
             });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('startupDialogOverlay');
+            if(localStorage.getItem('dialogPassed') === 'true') {
+                overlay.style.display = 'none';
+            }
+        });
+
+        function handleJoin() {
+            const overlay = document.getElementById('startupDialogOverlay');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                localStorage.setItem('dialogPassed', 'true');
+            }, 4000);
+        }
+
+        function shareApp() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Kunjungi Suki Store sekarang!',
+                    url: window.location.href
+                }).catch(err => console.log(err));
+            } else {
+                alert('Browser Anda tidak mendukung fitur share ini.');
+            }
         }
     </script>
 </body>
