@@ -383,7 +383,7 @@
             gap: 4px;
             margin-top: 4px;
         }
-        .btn-action-cart, .btn-action-buy {
+        .btn-action-buy {
             border: none;
             outline: none;
             border-radius: 6px;
@@ -395,22 +395,6 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-        }
-        .btn-action-cart {
-            width: 26px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-primary);
-            border: 1px solid var(--glass-border);
-        }
-        .btn-action-cart:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        .btn-action-cart:active {
-            transform: scale(0.92);
-        }
-        .btn-action-buy {
             flex: 1;
             height: 24px;
             background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
@@ -446,66 +430,6 @@
         }
         .btn-apk-store:active {
             transform: scale(0.95);
-        }
-
-        .cart-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 14px;
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            text-align: left;
-        }
-        .cart-item img {
-            width: 52px;
-            height: 52px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .cart-item-details {
-            flex: 1;
-        }
-        .cart-item-title {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #eee;
-            margin-bottom: 2px;
-        }
-        .cart-item-price {
-            font-size: 0.75rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-        }
-        .btn-remove-cart {
-            background: transparent;
-            border: none;
-            color: #ff5555;
-            cursor: pointer;
-            font-size: 0.9rem;
-            padding: 6px;
-        }
-        .cart-checkout-btn {
-            display: none;
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-            color: #050505;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border-radius: 10px;
-            margin-top: 16px;
-            border: none;
-            cursor: pointer;
         }
 
         .skeleton {
@@ -544,12 +468,12 @@
             bottom: 16px;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 32px);
-            max-width: 398px;
+            width: max-content;
             border-radius: 20px;
             display: flex;
-            justify-content: space-around;
-            padding: 12px 8px;
+            justify-content: center;
+            gap: 28px;
+            padding: 8px 28px;
             z-index: 100;
         }
         .nav-item {
@@ -573,10 +497,10 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
         }
         .nav-item i {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
         }
         .nav-item span {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 500;
         }
         
@@ -709,100 +633,170 @@
         .text-green {
             color: #2ed573;
         }
-
-        .voucher-card {
+        
+        .tools-grid {
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .tool-card {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            background: rgba(20, 20, 20, 0.8);
-            border-radius: 12px;
-            padding: 18px 16px;
-            margin-bottom: 16px;
-            position: relative;
-            overflow: hidden;
+            padding: 20px 12px;
+            border-radius: 16px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s ease, border 0.3s ease;
             border: 1px solid var(--glass-border);
+            cursor: pointer;
         }
-        .voucher-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff7b00, #d4af37, #00d2ff);
+        .tool-card:active {
+            transform: scale(0.96);
+            border: 1px solid rgba(255, 71, 87, 0.4);
         }
-        .vc-icon-wrapper {
-            width: 48px;
-            height: 48px;
+        .tool-icon-wrapper {
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            border: 1px solid rgba(212, 175, 55, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 16px;
-            background: rgba(212, 175, 55, 0.05);
-        }
-        .vc-icon-wrapper i {
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-        }
-        .vc-info {
-            text-align: left;
-            flex: 1;
-        }
-        .vc-title {
-            font-size: 0.75rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            margin-bottom: 2px;
-        }
-        .vc-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-        }
-        .voucher-search-bar {
-            display: flex;
-            gap: 8px;
             margin-bottom: 12px;
+            font-size: 20px;
+            border: 1px solid rgba(255, 71, 87, 0.5);
+            color: #ff4757;
+            background: rgba(255, 71, 87, 0.08);
+            box-shadow: 0 4px 12px rgba(255, 71, 87, 0.1);
         }
-        .voucher-search-bar input {
-            flex: 1;
-            background: rgba(0, 0, 0, 0.4);
+        .tool-title {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        .tool-desc {
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            font-weight: 400;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 99999;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #0d111a;
+            border-radius: 20px;
+            padding: 20px;
             border: 1px solid var(--glass-border);
-            border-radius: 8px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .modal-input {
+            width: 100%;
             padding: 12px 14px;
-            color: #fff;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
             font-size: 0.85rem;
             outline: none;
-            font-family: inherit;
         }
-        .voucher-search-bar input::placeholder {
-            color: var(--text-secondary);
+        .modal-input:focus {
+            border-color: rgba(255, 71, 87, 0.5);
         }
-        .btn-voucher-search {
-            background: linear-gradient(135deg, #2ed573 0%, #21a858 100%);
-            color: #050505;
+        .modal-textarea {
+            width: 100%;
+            height: 90px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            outline: none;
+            resize: none;
+        }
+        .modal-textarea:focus {
+            border-color: rgba(255, 71, 87, 0.5);
+        }
+        .modal-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
             border: none;
-            border-radius: 8px;
-            padding: 0 18px;
+            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+            color: #fff;
             font-weight: 700;
+            font-size: 0.85rem;
             cursor: pointer;
-            transition: transform 0.2s;
-            font-family: inherit;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
-        .btn-voucher-search:active {
-            transform: scale(0.95);
+        .modal-btn:active {
+            transform: scale(0.96);
         }
-        .voucher-message {
+        .modal-result {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 6px;
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+        }
+        .result-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #2ed573;
+            color: #000;
+            font-weight: 700;
             font-size: 0.8rem;
-            text-align: left;
-            margin-top: 4px;
-            font-weight: 500;
-            min-height: 20px;
+            text-decoration: none;
         }
-        .text-success { color: #2ed573; }
-        .text-error { color: #ff4757; }
     </style>
 </head>
 <body>
@@ -877,7 +871,7 @@
                                 <i class="fa-solid fa-user-tag"></i>
                             </div>
                             <div class="info-card-label">Penjual</div>
-                            <div class="info-card-value">member</div>
+                            <div class="info-card-value">Suki store</div>
                         </div>
                         
                         <div class="info-card info-card-red">
@@ -964,7 +958,6 @@
                         <h3 class="product-title">logo gratis by Suki</h3>
                         <p class="product-price">Rp 0</p>
                         <div class="product-actions">
-                            <button class="btn-action-cart" title="Tambah ke Keranjang" onclick="addToCart('logo gratis by Suki', 'Rp 0', 'https://i.ibb.co.com/RTNPFQj4/20260928-161507.png', 'https://wa.me/p/28495151180151524/6281930244528')"><i class="fa-solid fa-cart-shopping"></i></button>
                             <a href="https://wa.me/p/28495151180151524/6281930244528" target="_blank" class="btn-action-buy">Beli</a>
                         </div>
                     </div>
@@ -978,7 +971,6 @@
                         <h3 class="product-title">Pembuatan website gratis</h3>
                         <p class="product-price">Rp 0</p>
                         <div class="product-actions">
-                            <button class="btn-action-cart" title="Tambah ke Keranjang" onclick="addToCart('Pembuatan website gratis', 'Rp 0', 'https://i.ibb.co.com/m5KYV0fw/20260928-161440.png', 'https://wa.me/p/28495151180151524/6281930244528')"><i class="fa-solid fa-cart-shopping"></i></button>
                             <a href="https://wa.me/p/28495151180151524/6281930244528" target="_blank" class="btn-action-buy">Beli</a>
                         </div>
                     </div>
@@ -992,7 +984,6 @@
                         <h3 class="product-title">Pembuatan aplikasi gratis</h3>
                         <p class="product-price">Rp 0</p>
                         <div class="product-actions">
-                            <button class="btn-action-cart" title="Tambah ke Keranjang" onclick="addToCart('Pembuatan aplikasi gratis', 'Rp 0', 'https://i.ibb.co.com/zT4G4nmQ/20260928-161448.png', 'https://wa.me/p/28495151180151524/6281930244528')"><i class="fa-solid fa-cart-shopping"></i></button>
                             <a href="https://wa.me/p/28495151180151524/6281930244528" target="_blank" class="btn-action-buy">Beli</a>
                         </div>
                     </div>
@@ -1000,33 +991,75 @@
             </section>
         </div>
         
-        <div id="voucherPage" class="page-content glass-panel" style="margin: 16px; border-radius: 16px;">
-            <div class="voucher-card">
-                <div class="vc-icon-wrapper">
-                    <i class="fa-solid fa-wallet"></i>
-                </div>
-                <div class="vc-info">
-                    <div class="vc-title">VOUCER DISKON</div>
-                    <div id="vcPercentage" class="vc-value">? %</div>
-                </div>
+        <div id="alatPage" class="page-content" style="padding: 0; padding-top: 16px; padding-bottom: 24px;">
+            <div class="catalog-header" style="padding: 0 16px 16px; display: flex; justify-content: center; align-items: center;">
+                <h2 style="color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin: 0;">Alat & Layanan</h2>
             </div>
             
-            <div class="voucher-search-bar">
-                <input type="text" id="voucherInput" placeholder="Masukkan kode voucher">
-                <button onclick="applyVoucher()" class="btn-voucher-search"><i class="fa-solid fa-search"></i></button>
+            <div class="tools-grid">
+                <div onclick="openTool('yt')" class="tool-card glass-panel">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <span class="tool-title">YouTube Downloader</span>
+                    <span class="tool-desc">Download video/audio</span>
+                </div>
+                
+                <div onclick="openTool('tt')" class="tool-card glass-panel">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <span class="tool-title">TikTok Downloader</span>
+                    <span class="tool-desc">Tanpa watermark</span>
+                </div>
+                
+                <div onclick="openTool('deepl')" class="tool-card glass-panel">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <span class="tool-title">Terjemahan DeepL</span>
+                    <span class="tool-desc">Anti kaku & akurat</span>
+                </div>
+                
+                <div onclick="shareApi(event)" class="tool-card glass-panel">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <span class="tool-title">Share API Aplikasi</span>
+                    <span class="tool-desc">Bagikan fitur ini</span>
+                </div>
+
+                <a href="https://wa.me/6281930244528" target="_blank" class="tool-card glass-panel">
+                    <div class="tool-icon-wrapper">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <span class="tool-title">Jasa Buat APK</span>
+                    <span class="tool-desc">100% Gratis</span>
+                </a>
             </div>
-            <div id="voucherMessage" class="voucher-message"></div>
         </div>
-        
-        <div id="cartPage" class="page-content glass-panel" style="margin: 16px; border-radius: 16px;">
-            <h2>Cart</h2>
-            <p id="cartEmpty" style="font-size: 0.85rem; color: #ccc;">Keranjang belanja Anda saat ini kosong.</p>
-            <div id="cartList" class="cart-list"></div>
-            <a id="cartCheckout" href="#" target="_blank" class="cart-checkout-btn">Beli Sekarang via WhatsApp</a>
-        </div>
-        
-        <div id="profilePage" class="page-content glass-panel" style="margin: 16px; border-radius: 16px;">
-            <a href="https://wa.me/6281930244528" target="_blank" class="btn-apk-store">Jasa buat apk store gratis</a>
+    </div>
+
+    <div id="toolModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span id="modalTitle" class="modal-title">Tool</span>
+                <button class="modal-close" onclick="closeToolModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="modalInputContainer">
+                <input type="text" id="toolInputUrl" class="modal-input" placeholder="Tempel URL di sini...">
+                <textarea id="toolInputText" class="modal-textarea" style="display:none;" placeholder="Ketik teks yang mau diterjemahkan..."></textarea>
+                <select id="toolLangSelect" class="modal-input" style="display:none; margin-top:8px;">
+                    <option value="en">Indonesia -> Inggris</option>
+                    <option value="id">Inggris -> Indonesia</option>
+                </select>
+            </div>
+            <button id="modalActionBtn" class="modal-btn" onclick="executeTool()">Proses</button>
+            <div id="modalResult" class="modal-result"></div>
         </div>
     </div>
 
@@ -1035,17 +1068,9 @@
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
         </a>
-        <a class="nav-item" onclick="switchPage('voucherPage', this)">
-            <i class="fa-solid fa-ticket"></i>
-            <span>Voucher</span>
-        </a>
-        <a class="nav-item" onclick="switchPage('cartPage', this)">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span>Cart</span>
-        </a>
-        <a class="nav-item" onclick="switchPage('profilePage', this)">
-            <i class="fa-regular fa-user"></i>
-            <span>Profile</span>
+        <a class="nav-item" onclick="switchPage('alatPage', this)">
+            <i class="fa-solid fa-toolbox"></i>
+            <span>Alat</span>
         </a>
     </nav>
 
@@ -1138,81 +1163,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        let cartItems = JSON.parse(localStorage.getItem('sukiCart')) || [];
-        renderCart();
-
-        function saveCart() {
-            localStorage.setItem('sukiCart', JSON.stringify(cartItems));
-        }
-
-        function addToCart(title, price, imgSrc, waLink) {
-            const existingIndex = cartItems.findIndex(item => item.title === title);
-            if (existingIndex > -1) {
-                cartItems[existingIndex].qty += 1;
-            } else {
-                cartItems.push({ title, price, imgSrc, waLink, qty: 1 });
-            }
-            saveCart();
-            renderCart();
-            switchPage('cartPage', document.querySelectorAll('.nav-item')[2]);
-        }
-
-        function removeFromCart(index) {
-            cartItems.splice(index, 1);
-            saveCart();
-            renderCart();
-        }
-
-        function renderCart() {
-            const cartContainer = document.getElementById('cartList');
-            const cartEmpty = document.getElementById('cartEmpty');
-            const cartCheckout = document.getElementById('cartCheckout');
-            
-            if (cartItems.length === 0) {
-                cartContainer.innerHTML = '';
-                cartEmpty.style.display = 'block';
-                if (cartCheckout) cartCheckout.style.display = 'none';
-            } else {
-                cartEmpty.style.display = 'none';
-                let html = '';
-                cartItems.forEach((item, index) => {
-                    html += `<div class="cart-item"><img src="${item.imgSrc}" alt="${item.title}"><div class="cart-item-details"><div class="cart-item-title">${item.title}</div><div class="cart-item-price">${item.price} (x${item.qty})</div></div><button class="btn-remove-cart" onclick="removeFromCart(${index})"><i class="fa-solid fa-trash-can"></i></button></div>`;
-                });
-                cartContainer.innerHTML = html;
-                if (cartCheckout) {
-                    cartCheckout.style.display = 'block';
-                    cartCheckout.href = cartItems[0].waLink;
-                }
-            }
-        }
-
-        let savedVoucher = localStorage.getItem('sukiVoucher');
-        if (savedVoucher === 'diskonsuki226') {
-            document.getElementById('voucherInput').value = savedVoucher;
-            document.getElementById('vcPercentage').textContent = '5 %';
-            const msg = document.getElementById('voucherMessage');
-            msg.textContent = 'Voucher berhasil diterapkan! Anda mendapat diskon 5%.';
-            msg.className = 'voucher-message text-success';
-        }
-
-        function applyVoucher() {
-            const input = document.getElementById('voucherInput').value;
-            const msg = document.getElementById('voucherMessage');
-            const percentage = document.getElementById('vcPercentage');
-            
-            if(input === 'diskonsuki226') {
-                percentage.textContent = '5 %';
-                msg.textContent = 'Voucher berhasil diterapkan! Anda mendapat diskon 5%.';
-                msg.className = 'voucher-message text-success';
-                localStorage.setItem('sukiVoucher', input);
-            } else {
-                percentage.textContent = '? %';
-                msg.textContent = 'Kode voucher tidak valid.';
-                msg.className = 'voucher-message text-error';
-                localStorage.removeItem('sukiVoucher');
-            }
-        }
-
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js');
@@ -1232,6 +1182,136 @@
                 overlay.style.display = 'none';
                 localStorage.setItem('dialogPassed', 'true');
             }, 4000);
+        }
+
+        let currentToolType = '';
+
+        function openTool(type) {
+            currentToolType = type;
+            const modal = document.getElementById('toolModal');
+            const title = document.getElementById('modalTitle');
+            const urlInput = document.getElementById('toolInputUrl');
+            const textInput = document.getElementById('toolInputText');
+            const langSelect = document.getElementById('toolLangSelect');
+            const resultDiv = document.getElementById('modalResult');
+            
+            resultDiv.style.display = 'none';
+            resultDiv.innerHTML = '';
+            urlInput.value = '';
+            textInput.value = '';
+
+            if (type === 'yt') {
+                title.textContent = 'YouTube Downloader';
+                urlInput.style.display = 'block';
+                textInput.style.display = 'none';
+                langSelect.style.display = 'none';
+                urlInput.placeholder = 'Tempel URL YouTube di sini...';
+            } else if (type === 'tt') {
+                title.textContent = 'TikTok Downloader';
+                urlInput.style.display = 'block';
+                textInput.style.display = 'none';
+                langSelect.style.display = 'none';
+                urlInput.placeholder = 'Tempel URL TikTok di sini...';
+            } else if (type === 'deepl') {
+                title.textContent = 'Terjemahan DeepL';
+                urlInput.style.display = 'none';
+                textInput.style.display = 'block';
+                langSelect.style.display = 'block';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeToolModal() {
+            document.getElementById('toolModal').classList.remove('active');
+        }
+
+        async function executeTool() {
+            const btn = document.getElementById('modalActionBtn');
+            const resultDiv = document.getElementById('modalResult');
+            btn.disabled = true;
+            btn.textContent = 'Memproses...';
+            resultDiv.style.display = 'none';
+            resultDiv.innerHTML = '';
+
+            try {
+                if (currentToolType === 'yt') {
+                    const url = document.getElementById('toolInputUrl').value.trim();
+                    if (!url) throw new Error('Masukkan URL YouTube terlebih dahulu!');
+                    let downloadUrl = null;
+                    try {
+                        let res = await fetch('https://api.cobalt.tools/', {
+                            method: 'POST',
+                            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ url: url })
+                        });
+                        let data = await res.json();
+                        if (data && data.url) downloadUrl = data.url;
+                    } catch (e) {}
+                    if (!downloadUrl) {
+                        let res2 = await fetch('https://api.vreden.web.id/api/ytmp4?url=' + encodeURIComponent(url));
+                        let data2 = await res2.json();
+                        if (data2 && data2.result && data2.result.download && data2.result.download.url) {
+                            downloadUrl = data2.result.download.url;
+                        }
+                    }
+                    if (downloadUrl) {
+                        resultDiv.innerHTML = `<a href="${downloadUrl}" target="_blank" class="result-btn"><i class="fa-solid fa-download"></i> Download Video YouTube</a>`;
+                        resultDiv.style.display = 'flex';
+                    } else {
+                        alert('Gagal mengambil data video. Pastikan link YouTube valid!');
+                    }
+                } else if (currentToolType === 'tt') {
+                    const url = document.getElementById('toolInputUrl').value.trim();
+                    if (!url) throw new Error('Masukkan URL TikTok terlebih dahulu!');
+                    let res = await fetch('https://www.tikwm.com/api/?url=' + encodeURIComponent(url));
+                    let data = await res.json();
+                    if (data && data.data && data.data.play) {
+                        resultDiv.innerHTML = `<a href="${data.data.play}" target="_blank" class="result-btn"><i class="fa-solid fa-download"></i> Download Video (No WM)</a>`;
+                        resultDiv.style.display = 'flex';
+                    } else {
+                        alert('Gagal mengambil video TikTok. Pastikan link valid!');
+                    }
+                } else if (currentToolType === 'deepl') {
+                    const text = document.getElementById('toolInputText').value.trim();
+                    const lang = document.getElementById('toolLangSelect').value;
+                    if (!text) throw new Error('Masukkan teks yang ingin diterjemahkan!');
+                    let sourceLang = lang === 'en' ? 'id' : 'en';
+                    let res = await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=' + sourceLang + '&tl=' + lang + '&dt=t&q=' + encodeURIComponent(text));
+                    let data = await res.json();
+                    if (data && data[0]) {
+                        let translated = data[0].map(item => item[0]).join('');
+                        resultDiv.innerHTML = `<div style="color:var(--text-primary); font-size:0.85rem; text-align:left; white-space:pre-wrap;">${translated}</div><button onclick="navigator.clipboard.writeText('${translated.replace(/'/g, "\\'")}'); alert('Teks berhasil disalin!');" class="result-btn" style="background:#5b50f6; color:#fff; border:none; cursor:pointer;"><i class="fa-solid fa-copy"></i> Salin Hasil</button>`;
+                        resultDiv.style.display = 'flex';
+                    } else {
+                        alert('Gagal menerjemahkan teks!');
+                    }
+                }
+            } catch (err) {
+                alert(err.message || 'Terjadi kesalahan saat memproses request!');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Proses';
+            }
+        }
+
+        function shareApi(e) {
+            if (e) e.preventDefault();
+            const shareData = {
+                title: 'Wg Mods',
+                text: 'Gabung Saluran WhatsApp Wg Mods:',
+                url: 'https://whatsapp.com/channel/0029Vb6t3YqIXnluSByJvh1g'
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(() => {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText('https://whatsapp.com/channel/0029Vb6t3YqIXnluSByJvh1g').then(() => {
+                    alert('Link saluran berhasil disalin ke clipboard!');
+                }).catch(() => {
+                    alert('Link: https://whatsapp.com/channel/0029Vb6t3YqIXnluSByJvh1g');
+                });
+            } else {
+                alert('Link: https://whatsapp.com/channel/0029Vb6t3YqIXnluSByJvh1g');
+            }
         }
     </script>
 </body>
